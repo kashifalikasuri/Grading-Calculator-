@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="./Index.css">
+</head>
+<body>
+    
+    <header>
+    <form >
+        <H1  style="text-align: center;">Let Calculate Result</H1>
+        <label for="obt1">Chemistry</label>
+        <br>
+        <input type="number" name="obt1" placeholder=" Chemistry Marks" id="obt1" required>
+        <br>
+        <label for="obt2">Physics</label>
+        <br>
+        <input type="number" name="obt2" placeholder="Physics Marks" id="obt2" required>
+        <br>
+        <label for="obt2">Math</label>
+        <br>
+        <input type="number" name="obt3" placeholder="Math Marks" id="obt3" required>
+        <br>
+        <label for="obt4">English</label>
+        <br>
+        <input type="number" name="obt4" placeholder="English Marks" id="obt4" required>
+        <br>
+        <label for="obt5">Urdu</label>
+        <br>
+        <input type="number" name="obt5" placeholder="Urdu Marks" id="obt5" required>
+        <br>
+        <label for="tm">Total Marks</label>
+        <br>
+        <input type="number" name="tm" placeholder="Total Marks" id="tm" required>
+        <br>
+        <button type="submit" onclick="calculateResult()"> Calculate Result</button>
+        
+
+    </form>
+</header>
+<script>
+    function calculateResult() {
+        let obt1 = parseInt(document.getElementById("obt1").value);
+        let obt2 = parseInt(document.getElementById("obt2").value);
+        let obt3 = parseInt(document.getElementById("obt3").value);
+        let obt4 = parseInt(document.getElementById("obt4").value);
+        let obt5 = parseInt(document.getElementById("obt5").value);
+        let stdtmMakrs = document.getElementById("tm").value;
+        let totalObtainedmarks = obt1 + obt2 + obt3 + obt4 + obt5;
+        let Result= totalObtainedmarks /stdtmMakrs*100;
+        document.write("Total Percentage: " + Result);
+        if (Result===100){
+            document.write("Grade A+")
+        }
+        else if (Result>=90 && Result<100){
+       document.write("Grade A")
+       }
+       else if (Result>=80 && Result<89){
+       document.write("Grade B")
+       }
+       else if (Result>=60 && Result<79){
+       document.write("Grade C")
+       }
+       else if (Result>=40 && Result<59){
+       document.write("Grade D")
+       }
+       else {
+       document.write("Grade F")
+       }
+       
+
+   
+    document.getElementById("Result").innerHTML ="Total Percentage:" +Result; 
+   
+
+}
+  </script>
+</body>
+
+</html>
